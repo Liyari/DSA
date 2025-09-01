@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 typedef struct node{
     int data;
@@ -48,6 +49,14 @@ void empty(List *list){
 void insertFirst(List *list, int data){
     Node *newNode = (Node*) malloc (sizeof(Node));
     newNode->data = data;
+    newNode->next = list->head;
+    list->head = newNode;
+    list->count++;
+}
+
+void insertLast(List *list, int data){
+    Node *newNode = (Node*) malloc (sizeof(Node));
+    newNode->data = data;
     newNode->next = NULL;
 
     if(list->head == NULL){
@@ -62,5 +71,12 @@ void insertFirst(List *list, int data){
     list->count++;
 }
 
+void insertPos(List *list, int data, int index){
+    Node *newNode = (Node*) malloc (sizeof(Node));
+    newNode->data = data;
+    newNode->next = list->head;
+    
+
+}
 
 
