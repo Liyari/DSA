@@ -24,9 +24,43 @@ void display(List *list);
 
 
 int main(){
-    List list;
+    List *list = initialize();
+
 }
 
 List *initialize(){
-    
+    List *list = (List*) malloc (sizeof(List));
+    list->head = NULL;
+    list->count = 0;
+    return list;
 }
+
+void empty(List *list){
+    if(list->count == 0){
+        printf("List already empty.");
+    }else{
+        free(list);
+        list->count = 0;
+        printf("Successfully freed");
+    }
+}
+
+void insertFirst(List *list, int data){
+    Node *newNode = (Node*) malloc (sizeof(Node));
+    newNode->data = data;
+    newNode->next = NULL;
+
+    if(list->head == NULL){
+        list->head = newNode;
+    }else{
+        Node *temp = list->head;
+        while(temp->next == NULL){
+            temp = temp->next;
+        }
+        temp->next = newNode;
+    }
+    list->count++;
+}
+
+
+
