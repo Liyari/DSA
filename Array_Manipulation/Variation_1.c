@@ -29,15 +29,15 @@ int main(){
     L= insertPos(L, 50, 5);
     display(L);
 
-    printf("Insert data at position 2\n");
+    printf("Insert data at position 2...\n");
     L = insertPos(L, 60, 2);
     display(L);
 
-    printf("Delete data at position 2\n");
+    printf("Delete data at position 2...\n");
     L = deletePos(L, 2);
     display(L);
 
-    printf("Locate if 30 exists\n");
+    printf("Locate if 30 exists...\n");
     int pos = locate(L, 30);
     if (pos != -1) {
         printf("Found at position: %d\n\n", pos + 1);  
@@ -45,7 +45,7 @@ int main(){
         printf("Not found!\n\n");
     }
 
-    printf("Insert Sorted\n");
+    printf("Insert Sorted...\n");
     L = insertSorted(L, 60);
     display(L);
 
